@@ -1,4 +1,4 @@
-// src/components/layout/Navbar.jsx
+// src/components/layout/Navbar.jsx 
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '../../contexts/ThemeContext'
@@ -36,18 +36,17 @@ const Navbar = ({ brandName, navItems, logo }) => {
           : 'bg-transparent'
       }`}
     >
-      <div className="w-full px-2 sm:px-6 lg:px-8 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo/Brand */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-3 z-50"
           >
-            {logo && <img src={logo} alt={brandName} className="h-8 w-auto max-w-[120px]" />}
+            {logo && <img src={logo} alt={brandName} className="h-8 w-auto" />}
             <span className="hidden md:inline text-xl font-bold text-amber-300">
-            {brandName}
-          </span>
-
+              {brandName}
+            </span>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -77,15 +76,9 @@ const Navbar = ({ brandName, navItems, logo }) => {
             </motion.button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2 z-50">
-            <motion.button
-              whileTap={{ scale: 0.9 }}
-              onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 cursor-pointer"
-            >
-              {isDark ? <Sun size={20} /> : <Moon size={20} />}
-            </motion.button>
+          {/* Mobile menu button - SWAPPED ORDER */}
+          <div className="md:hidden flex items-center space-x-4 z-50">
+            {/* Menu button first */}
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -93,10 +86,19 @@ const Navbar = ({ brandName, navItems, logo }) => {
             >
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </motion.button>
+            
+            {/* Theme toggle second */}
+            <motion.button
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 cursor-pointer"
+            >
+              {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            </motion.button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - FIXED FOR MOBILE */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
@@ -104,14 +106,19 @@ const Navbar = ({ brandName, navItems, logo }) => {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-t border-gray-200 dark:border-gray-700"
+              className="md:hidden fixed top-16 left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-t border-gray-200 dark:border-gray-700 overflow-hidden"
+              style={{ 
+                width: '100vw', // Ensure it doesn't stretch beyond viewport
+                maxHeight: 'calc(100vh - 4rem)', // Prevent going beyond screen height
+                overflowY: 'auto' // Allow scrolling if content is too long
+              }}
             >
               <div className="px-4 py-6 space-y-4">
                 {navItems.map((item) => (
                   <motion.button
                     key={item.name}
                     onClick={() => scrollToSection(item.href.replace('#', ''))}
-                    className="block w-full text-left text-lg text-amber-50 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all cursor-pointer"
+                    className="block w-full text-left text-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all cursor-pointer"
                     whileHover={{ x: 10 }}
                   >
                     {item.name}
