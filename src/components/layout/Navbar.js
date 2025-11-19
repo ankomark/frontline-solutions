@@ -44,7 +44,7 @@ const Navbar = ({ brandName, navItems, logo }) => {
             className="flex items-center space-x-3 z-50"
           >
             {logo && <img src={logo} alt={brandName} className="h-10 w-auto" />}
-            <span className="text-xl font-bold text-amber-300 dark:text-white">
+            <span className="text-xl font-bold text-amber-300">
               {brandName}
             </span>
           </motion.div>
@@ -110,7 +110,7 @@ const Navbar = ({ brandName, navItems, logo }) => {
                   <motion.button
                     key={item.name}
                     onClick={() => scrollToSection(item.href.replace('#', ''))}
-                    className="block w-full text-left text-lg text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all cursor-pointer"
+                    className="block w-full text-left text-lg text-amber-50 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium py-3 px-4 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all cursor-pointer"
                     whileHover={{ x: 10 }}
                   >
                     {item.name}

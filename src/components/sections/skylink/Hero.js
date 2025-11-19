@@ -21,8 +21,8 @@ const NetworkBackground = () => {
 
     // Network nodes
     const nodes = []
-    const nodeCount = 125
-    const connectionDistance = 100
+    const nodeCount = 75
+    const connectionDistance = 80
 
     // Create nodes
     for (let i = 0; i < nodeCount; i++) {
@@ -41,7 +41,7 @@ const NetworkBackground = () => {
       
       // Draw connections
       ctx.strokeStyle = 'rgba(0, 150, 255, 0.4)'
-      ctx.lineWidth = 2
+      ctx.lineWidth = 1
       
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
