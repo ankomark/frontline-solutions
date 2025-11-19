@@ -21,8 +21,8 @@ const NetworkBackground = () => {
 
     // Network nodes
     const nodes = []
-    const nodeCount = 25
-    const connectionDistance = 150
+    const nodeCount = 125
+    const connectionDistance = 100
 
     // Create nodes
     for (let i = 0; i < nodeCount; i++) {
@@ -40,8 +40,8 @@ const NetworkBackground = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       
       // Draw connections
-      ctx.strokeStyle = 'rgba(34, 197, 94, 0.3)'
-      ctx.lineWidth = 0.5
+      ctx.strokeStyle = 'rgba(0, 150, 255, 0.4)'
+      ctx.lineWidth = 2
       
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
@@ -59,7 +59,7 @@ const NetworkBackground = () => {
       }
 
       // Update and draw nodes
-      ctx.fillStyle = 'rgba(34, 197, 94, 0.8)'
+      ctx.fillStyle = 'rgba(150, 220, 255, 0.8)'
       nodes.forEach(node => {
         // Update position
         node.x += node.vx
@@ -126,7 +126,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="mb-8"
         >
-          <Wifi size={80} className="mx-auto mb-4 text-green-400" />
+          <Wifi size={10} className="mx-auto mb-4 text-green-400" />
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Reliable High-Speed Internet Solutions
           </h1>

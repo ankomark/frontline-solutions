@@ -36,7 +36,7 @@ const Portfolio = () => {
       thumbnail: '/images/kitere.jpg',
       videoUrl: 'https://www.youtube.com/embed/DxS3zP3HzuY',
       description: 'High-end church service streaming and trails  and cinematic sequences.',
-      client: 'Rongo university church',
+      client: 'Kitere sda church',
       duration: '1 weeks',
       deliverables: ['60s Commercial', 'Social Media Ads', 'Behind the Scenes', 'Photography']
     },
@@ -48,7 +48,7 @@ const Portfolio = () => {
       thumbnail: '/images/anoi.png',
       videoUrl:  'https://www.youtube.com/embed/TnDTQDKaPFE',
       description: 'High-end video quolity that brings everything into detail trails  and cinematic sequences.',
-      client: 'Rongo university church',
+      client: 'Annointed gospel ministers',
       duration: '2 weeks',
       deliverables: ['60s Commercial', 'Social Media Ads', 'Behind the Scenes', 'Photography']
     },
@@ -61,7 +61,7 @@ const Portfolio = () => {
       thumbnail: '/images/nyosi.png',
       videoUrl:  'https://www.youtube.com/embed/7qk8q6PqiU8',
       description: 'High-end video quolity that brings everything into detail trails  and cinematic sequences',
-      client: 'Rongo university church',
+      client: 'Nyosia AY',
       duration: '3 weeks',
       deliverables: ['60s Commercial', 'Social Media Ads', 'Behind the Scenes', 'Photography']
     },
@@ -73,7 +73,7 @@ const Portfolio = () => {
       thumbnail: '/images/iber.png',
       videoUrl: 'https://www.youtube.com/embed/_YtpTNaiNDM',
       description: 'High-end video quolity that brings everything into detail trails  and cinematic sequences.',
-      client: 'Rongo university church',
+      client: 'Radienya Girls',
       duration: '1 weeks',
       deliverables: ['60s Commercial', 'Social Media Ads', 'Behind the Scenes', 'Photography']
     },
@@ -85,7 +85,7 @@ const Portfolio = () => {
       thumbnail: '/images/nyad.png',
       videoUrl: 'https://www.youtube.com/embed/lIEVX-lpovU',
       description: 'High-end video quolity that brings everything into detail trails  and cinematic sequences.',
-      client: 'Rongo university church',
+      client: 'kanyadgiro chorale',
       duration: '2 weeks',
       deliverables: ['60s Commercial', 'Social Media Ads', 'Behind the Scenes', 'Photography']
     },
@@ -109,7 +109,7 @@ const Portfolio = () => {
       thumbnail: '/images/photo.jpg',
       // videoUrl: 'https://www.youtube.com/embed/qn09WrMduJw',
       description: 'High-end picture quolity that brings everything into detail trails  and cinematic sequences.',
-      client: 'Rongo university church',
+      client: 'Studio $ Outdoor',
       duration: '24 hrs',
       deliverables: ['60s Commercial', 'Social Media Ads', 'Behind the Scenes', 'Photography']
     },
@@ -121,7 +121,7 @@ const Portfolio = () => {
       thumbnail: '/images/alb1.jpg',
       // videoUrl: 'https://www.youtube.com/embed/qn09WrMduJw',
       description: 'High-end picture quolity that brings everything into detail trails  and cinematic sequences.',
-      client: 'Rongo university church',
+      client: 'Studio $ Outdoor',
       duration: '24 hrs',
       deliverables: ['60s Commercial', 'Social Media Ads', 'Behind the Scenes', 'Photography']
     },

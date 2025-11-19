@@ -23,34 +23,55 @@ const Contact = () => {
     });
   };
 
+  // Handler functions
+  const handleCall = () => {
+    window.location.href = 'tel:+254701071435';
+  };
+
+  const handleWhatsApp = () => {
+    window.open('https://wa.me/254701071435', '_blank');
+  };
+
+  const handleEmail = () => {
+    window.location.href = 'mailto:ankomark76@gmail.com';
+  };
+
+  const handleMap = () => {
+    window.open('https://www.google.com/maps/search/?api=1&query=Migori+Rongo+Town', '_blank');
+  };
+
   const contactMethods = [
     {
       icon: Mail,
       title: 'Email Us',
       details: 'ankomark76@gmail.com',
       description: 'Send us an email anytime',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      action: handleEmail
     },
     {
       icon: Phone,
       title: 'Call Us',
       details: '+254701071435',
       description: 'Mon-Fri from 8am to 6pm',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-purple-500 to-pink-500',
+      action: handleCall
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      details: 'Our team is ready to get in touch',
-      description: 'Migori Rongo Town',
-      color: 'from-orange-500 to-red-500'
+      details: 'Migori Rongo Town',
+      description: 'Our team is ready to get in touch',
+      color: 'from-orange-500 to-red-500',
+      action: handleMap
     },
     {
       icon: MessageCircle,
-      title: 'Live Chat',
-      details: 'Start Chat',
+      title: 'WhatsApp',
+      details: '+254701071435',
       description: '24/7 available support',
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-green-500 to-emerald-500',
+      action: handleWhatsApp
     }
   ];
 
@@ -94,14 +115,21 @@ const Contact = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300"
+                  onClick={method.action}
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300 cursor-pointer group"
                 >
-                  <div className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-lg flex items-center justify-center mb-4`}>
+                  <div className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <method.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="font-semibold text-lg mb-2">{method.title}</h4>
-                  <p className="text-blue-400 font-medium mb-1">{method.details}</p>
-                  <p className="text-gray-400 text-sm">{method.description}</p>
+                  <h4 className="font-semibold text-lg mb-2 group-hover:text-blue-400 transition-colors">
+                    {method.title}
+                  </h4>
+                  <p className="text-blue-400 font-medium mb-1 group-hover:text-blue-300 transition-colors">
+                    {method.details}
+                  </p>
+                  <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
+                    {method.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -132,6 +160,34 @@ const Contact = () => {
                   <span className="text-blue-400">10:00 AM - 4:00 PM</span>
                 </div>
               </div>
+            </motion.div>
+
+            {/* Quick Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-4 mt-6"
+            >
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleCall}
+                className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <Phone size={20} />
+                <span>Call Now</span>
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleWhatsApp}
+                className="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <MessageCircle size={20} />
+                <span>WhatsApp</span>
+              </motion.button>
             </motion.div>
           </motion.div>
 
@@ -214,7 +270,7 @@ const Contact = () => {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg flex items-center justify-center gap-3 hover:shadow-lg transition-all duration-300"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-4 px-8 rounded-lg flex items-center justify-center gap-3 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
                 <Send size={20} />
                 Send Message
