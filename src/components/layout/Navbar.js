@@ -44,9 +44,10 @@ const Navbar = ({ brandName, navItems, logo }) => {
             className="flex items-center space-x-3 z-50"
           >
             {logo && <img src={logo} alt={brandName} className="h-10 w-auto" />}
-            <span className="text-xl font-bold text-amber-300">
-              {brandName}
-            </span>
+            <span className="hidden md:inline text-xl font-bold text-amber-300">
+            {brandName}
+          </span>
+
           </motion.div>
 
           {/* Desktop Navigation */}
