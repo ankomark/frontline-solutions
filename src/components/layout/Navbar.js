@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '../../contexts/ThemeContext'
-import { Sun, Moon, Menu, X } from 'lucide-react'
+import {  Menu, Sun, Moon, X } from 'lucide-react'
 
 const Navbar = ({ brandName, navItems, logo }) => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -36,14 +36,14 @@ const Navbar = ({ brandName, navItems, logo }) => {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-2 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="flex justify-between items-center py-4">
           {/* Logo/Brand */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-3 z-50"
           >
-            {logo && <img src={logo} alt={brandName} className="h-1 w-auto" />}
+            {logo && <img src={logo} alt={brandName} className="h-8 w-auto max-w-[120px]" />}
             <span className="hidden md:inline text-xl font-bold text-amber-300">
             {brandName}
           </span>
@@ -78,7 +78,7 @@ const Navbar = ({ brandName, navItems, logo }) => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-4 z-50">
+          <div className="md:hidden flex items-center space-x-2 z-50">
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={toggleTheme}
