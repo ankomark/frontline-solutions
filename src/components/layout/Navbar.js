@@ -43,7 +43,7 @@ const Navbar = ({ brandName, navItems, logo }) => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-3 z-50"
           >
-            {logo && <img src={logo} alt={brandName} className="h-10 w-auto" />}
+            {logo && <img src={logo} alt={brandName} className="h-5 w-auto" />}
             <span className="hidden md:inline text-xl font-bold text-amber-300">
             {brandName}
           </span>
