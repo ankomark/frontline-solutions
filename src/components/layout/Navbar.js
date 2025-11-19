@@ -36,7 +36,7 @@ const Navbar = ({ brandName, navItems, logo }) => {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo/Brand */}
           <motion.div
@@ -78,7 +78,7 @@ const Navbar = ({ brandName, navItems, logo }) => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-4 z-50">
+          <div className="md:hidden flex items-center space-x-2 z-50">
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={toggleTheme}
