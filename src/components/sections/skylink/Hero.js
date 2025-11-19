@@ -21,7 +21,7 @@ const NetworkBackground = () => {
 
     // Network nodes
     const nodes = []
-    const nodeCount = 75
+    const nodeCount = 80
     const connectionDistance = 80
 
     // Create nodes
