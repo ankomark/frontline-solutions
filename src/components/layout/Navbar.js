@@ -44,7 +44,7 @@ const Navbar = ({ brandName, navItems, logo }) => {
             className="flex items-center space-x-3 z-50"
           >
             {logo && <img src={logo} alt={brandName} className="h-10 w-auto" />}
-            <span className="text-xl font-bold text-gray-900 dark:text-white">
+            <span className="text-xl font-bold text-amber-300 dark:text-white">
               {brandName}
             </span>
           </motion.div>
