@@ -89,6 +89,30 @@ const Portfolio = () => {
       duration: '2 weeks',
       deliverables: ['60s Commercial', 'Social Media Ads', 'Behind the Scenes', 'Photography']
     },
+        {
+      id: 3,
+      title: 'Video shooting',
+      category: 'video',
+      type: 'video',
+      thumbnail: '/images/bree.png',
+      videoUrl: 'https://www.youtube.com/embed/OSoXEjlhVoI',
+      description: 'High-end video quolity that brings everything into detail trails  and cinematic sequences.',
+      client: 'Brenda phacy',
+      duration: '2 weeks',
+      deliverables: ['60s Commercial', 'Social Media Ads', 'Behind the Scenes', 'Photography']
+    },
+     {
+      id: 3,
+      title: 'Video shooting',
+      category: 'video',
+      type: 'video',
+      thumbnail: '/images/jose.png',
+      videoUrl: 'https://www.youtube.com/embed/qOwhrbVlBUA',
+      description: 'High-end video quolity that brings everything into detail trails  and cinematic sequences.',
+      client: 'Joseph Agao',
+      duration: '2 weeks',
+      deliverables: ['60s Commercial', 'Social Media Ads', 'Behind the Scenes', 'Photography']
+    },
           {
       id: 3,
       title: 'Video shooting',
